@@ -22,7 +22,7 @@ News App 是一款基于 Expo 和 React Native 开发的新闻应用，旨在为
 ### 克隆项目
 
 ```bash
-git clone 
+git clone https://github.com/xb2lf/news-app
 ```
 
 ### 安装依赖
@@ -43,4 +43,4 @@ npx expo start
 
 1. 项目是基于expo构建，需要使用`Expo Orbit【pc端】`和`Expo Go 【移动端】`
 
-2. 可视显示情况使用ios/Android虚拟机或物理机
+2. 可视显示情况使用IOS/Android虚拟机或物理机
