@@ -1,50 +1,46 @@
-# Welcome to your Expo app 👋
+# News App
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+## 项目概述
 
-## Get started
+News App 是一款基于 Expo 和 React Native 开发的新闻应用，旨在为用户提供便捷获取各类新闻资讯的途径。通过该应用，用户可浏览不同来源、不同类别的新闻文章，实现个性化的新闻阅读体验。
 
-1. Install dependencies
+## 功能特点
 
-   ```bash
-   npm install
-   ```
+1. **新闻浏览**：展示丰富多样的新闻列表，涵盖政治、经济、娱乐、体育等多个领域。
+2. **文章详情**：点击新闻标题可查看完整文章内容，包括标题、作者、发布时间及正文。
+3. **搜索功能**：支持用户通过关键词搜索感兴趣的新闻。
+4. **收藏功能**：允许用户将喜欢的新闻添加到收藏夹，方便后续查看。
 
-2. Start the app
+## 技术栈
 
-   ```bash
-    npx expo start
-   ```
+1. **React Native**：用于构建跨平台移动应用，实现高效的 UI 开发及良好的用户交互体验。
+2. **Expo**：提供了一系列工具和服务，简化 React Native 应用的开发、部署和管理流程，如内置的开发服务器、对多种设备功能的支持等。
+3. **API**：调用第三方新闻 API 获取新闻数据，如 [newsapi](https://newsapi.org)，确保新闻来源的及时性和多样性。
 
-In the output, you'll find options to open the app in a
+## 安装与运行
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
-
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
-
-## Get a fresh project
-
-When you're ready, run:
+### 克隆项目
 
 ```bash
-npm run reset-project
+git clone 
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+### 安装依赖
 
-## Learn more
+```bash
+cd news-app
 
-To learn more about developing your project with Expo, look at the following resources:
+npm install
+```
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+### 启动项目
 
-## Join the community
+```bash
+npx expo start
+```
 
-Join our community of developers creating universal apps.
+## 注意
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+1. 项目是基于expo构建，需要使用`Expo Orbit【pc端】`和`Expo Go 【移动端】`
+
+2. 可视显示情况使用ios/Android虚拟机或物理机

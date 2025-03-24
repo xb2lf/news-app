@@ -1,45 +1,72 @@
 import { Tabs } from 'expo-router';
-import React from 'react';
-import { Platform } from 'react-native';
+import { useColorScheme } from 'nativewind';
+import { Ionicons } from '@expo/vector-icons';
 
-import { HapticTab } from '@/components/HapticTab';
-import { IconSymbol } from '@/components/ui/IconSymbol';
-import TabBarBackground from '@/components/ui/TabBarBackground';
-import { Colors } from '@/constants/Colors';
-import { useColorScheme } from '@/hooks/useColorScheme';
-
-export default function TabLayout() {
-  const colorScheme = useColorScheme();
-
+const TabsLayout = () => {
+  const { colorScheme, toggleColorScheme } = useColorScheme();
+  const routesList = [
+    {
+      id: 1,
+      name: 'index',
+      title: 'Home',
+      iconName: 'home',
+      iconSzie: 25,
+    },
+    {
+      id: 2,
+      name: 'discover/index',
+      title: 'Discover',
+      iconName: 'compass-outline',
+      iconSzie: 25,
+    },
+    {
+      id: 3,
+      name: 'saved/index',
+      title: 'Saved',
+      iconName: 'bookmark-outline',
+      iconSzie: 25,
+    },
+    {
+      id: 4,
+      name: 'search/index',
+      title: 'Search',
+      iconName: 'search-outline',
+      iconSzie: 25,
+    },
+  ];
   return (
     <Tabs
       screenOptions={{
-        tabBarActiveTintColor: Colors[colorScheme ?? 'light'].tint,
         headerShown: false,
-        tabBarButton: HapticTab,
-        tabBarBackground: TabBarBackground,
-        tabBarStyle: Platform.select({
-          ios: {
-            // Use a transparent background on iOS to show the blur effect
-            position: 'absolute',
-          },
-          default: {},
-        }),
-      }}>
-      <Tabs.Screen
-        name="index"
-        options={{
-          title: 'Home',
-          tabBarIcon: ({ color }) => <IconSymbol size={28} name="house.fill" color={color} />,
-        }}
-      />
-      <Tabs.Screen
-        name="explore"
-        options={{
-          title: 'Explore',
-          tabBarIcon: ({ color }) => <IconSymbol size={28} name="paperplane.fill" color={color} />,
-        }}
-      />
+        tabBarActiveTintColor: 'green',
+        tabBarInactiveTintColor: 'gray',
+        tabBarLabelStyle: {
+          fontSize: 12,
+          fontFamily: 'SpaceGroteskMedium',
+        },
+        tabBarStyle: {
+          backgroundColor: colorScheme === 'dark' ? 'black' : 'white',
+        },
+      }}
+    >
+      {routesList.map((item) => (
+        <Tabs.Screen
+          key={item.id}
+          name={item.name}
+          options={{
+            title: item.title,
+            tabBarIcon: ({ focused }) => (
+              <Ionicons
+                name={item.iconName as any}
+                size={item.iconSzie}
+                color={focused ? 'green' : 'gray'}
+              />
+            ),
+          }}
+        />
+      ))}
     </Tabs>
   );
-}
+};
+
+export default TabsLayout;
